@@ -4,22 +4,17 @@ using UnityEngine;
 
 public class MoveGraphics : MonoBehaviour
 {
-    Vector3 destination = new Vector3(-150, 0, 0); 
+    int countPosition = 0;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    Vector3 destination = new Vector3(-50, 0, 0);
 
-    // Update is called once per frame
-    void Update()
-    {
-   
-    }
-
+    //Deplazar el grafico a razon de la variable destination
     public void MoveGraphicPosition()
     {
-        this.transform.position += destination;
+        this.transform.position = this.transform.position + destination;
+        countPosition++;
+        SetUpMainCanvas.sharedInstance.UpdateLastPrice(countPosition);
+        SetUpMainCanvas.sharedInstance.UpdateTotalBalance();
+        SetUpMainCanvas.sharedInstance.UpdateBalanceDifference();
     }
 }
