@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SetUpMainCanvas : MonoBehaviour
 {
@@ -129,6 +130,12 @@ public class SetUpMainCanvas : MonoBehaviour
             this.sharesMarket = this.sharesMarket - sharesMarket;
         }
         
+    }
+    
+    //Salir del modulo de AR
+    public void ExitARScene()
+    {
+        Application.Quit();
     }
 
     //Gutters

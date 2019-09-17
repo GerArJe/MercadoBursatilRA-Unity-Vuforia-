@@ -39,24 +39,25 @@ public class SetUpOperationCanvas : MonoBehaviour
             SetUpMainCanvas.sharedInstance.UpdateSharesMarket(int.Parse(inputField.text), true);
             SetUpMainCanvas.sharedInstance.UpdateTotalBalance();
 
-            //ShowToast(true);
+            ShowToast(true);
             
             MenuManager.sharedInstance.HideOperationCanvas();
             MenuManager.sharedInstance.ShowMainCanvas();
         }
         else
         {
-            //ShowToast(false);
+            ShowToast(false);
         }
     }
 
+    //vender acciones --> Este implica modificar una serie de variables
     public void Sell()
     {
         SetUpMainCanvas.sharedInstance.UpdateCashBalance(totalValue, true);
         SetUpMainCanvas.sharedInstance.UpdateSharesMarket(int.Parse(inputField.text), false);
         SetUpMainCanvas.sharedInstance.UpdateTotalBalance();
 
-        //ShowToast(true);
+        ShowToast(true);
 
         MenuManager.sharedInstance.HideOperationCanvas();
         MenuManager.sharedInstance.ShowMainCanvas();

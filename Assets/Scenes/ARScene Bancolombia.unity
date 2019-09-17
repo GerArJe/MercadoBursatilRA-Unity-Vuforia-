@@ -688,7 +688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a42b23df54ee6f341ba480b86a71b6af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentCompany: 2
+  currentCompany: 1
   dropdown: {fileID: 86552876}
 --- !u!114 &86552876
 MonoBehaviour:
@@ -738,9 +738,9 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: CEMENTOS ARGOS (Mensual)
-      m_Image: {fileID: 0}
     - m_Text: BANCOLOMBIA (Semanal)
+      m_Image: {fileID: 0}
+    - m_Text: CEMENTOS ARGOS (Mensual)
       m_Image: {fileID: 0}
     - m_Text: ECOPETROL (Diraria)
       m_Image: {fileID: 0}
@@ -3458,7 +3458,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: CEMENTOS ARGOS (Mensual)
+  m_Text: BANCOLOMBIA (Semanal)
 --- !u!222 &1616586383
 CanvasRenderer:
   m_ObjectHideFlags: 0
