@@ -31,8 +31,6 @@ public class SetUpMainCanvas : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        lastPrice = DataGraphics.sharedInstance.ValueDataArgosForPosition(0);
-
         UpdateTotalBalance();
     }
 
