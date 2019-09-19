@@ -19,6 +19,8 @@ public class SetUpOperationCanvas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        totalValue = int.Parse(inputField.text) * SetUpMainCanvas.sharedInstance.GetLastPrice();
+
         cashBalanceText.text = SetUpMainCanvas.sharedInstance.cashBalanceText.text;
         unitValueText.text = "Valor unitario: " + SetUpMainCanvas.sharedInstance.lastPriceText.text;
         totalValueText.text = "El valor total de las acciones es:" + totalValue + " COP";
