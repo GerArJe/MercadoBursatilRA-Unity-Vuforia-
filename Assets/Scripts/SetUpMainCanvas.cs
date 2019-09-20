@@ -138,5 +138,6 @@ public class SetUpMainCanvas : MonoBehaviour
 
     //Gutters
     public int GetLastPrice() => lastPrice;
-    public int GetCashBalance() => cashBalance;  
+    public int GetCashBalance() => cashBalance;
+    public int GetSharesMarket() => sharesMarket;
 }

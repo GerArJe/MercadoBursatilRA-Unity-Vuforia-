@@ -55,14 +55,22 @@ public class SetUpOperationCanvas : MonoBehaviour
     //vender acciones --> Este implica modificar una serie de variables
     public void Sell()
     {
-        SetUpMainCanvas.sharedInstance.UpdateCashBalance(totalValue, true);
-        SetUpMainCanvas.sharedInstance.UpdateSharesMarket(int.Parse(inputField.text), false);
-        SetUpMainCanvas.sharedInstance.UpdateTotalBalance();
+        if (int.Parse(inputField.text) <= SetUpMainCanvas.sharedInstance.GetSharesMarket())
+        {
+            SetUpMainCanvas.sharedInstance.UpdateCashBalance(totalValue, true);
+            SetUpMainCanvas.sharedInstance.UpdateSharesMarket(int.Parse(inputField.text), false);
+            SetUpMainCanvas.sharedInstance.UpdateTotalBalance();
 
-        ShowToast(true);
+            ShowToast(true);
 
-        MenuManager.sharedInstance.HideOperationCanvas();
-        MenuManager.sharedInstance.ShowMainCanvas();
+            MenuManager.sharedInstance.HideOperationCanvas();
+            MenuManager.sharedInstance.ShowMainCanvas();
+        }
+        else
+        {
+            ShowToast(false);
+        }
+        
     }
 
     //Mostar toast de la operación
@@ -85,7 +93,7 @@ public class SetUpOperationCanvas : MonoBehaviour
         }
         else
         {
-            toastParams[1] = "Saldo insuficiente";
+            toastParams[1] = "Operación no valida";
         }
         
          toastParams[2] = toastClass.GetStatic<int>
