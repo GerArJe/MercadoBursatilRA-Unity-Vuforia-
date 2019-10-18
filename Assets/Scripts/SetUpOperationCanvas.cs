@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class SetUpOperationCanvas : MonoBehaviour
 {
-    public Text cashBalanceText, unitValueText, totalValueText;
+    public Text cashBalanceText, unitValueText, totalValueText, sharesMarketText;
     public InputField inputField;
     public Button buttonBuy, buttonSell;
     private int totalValue = 0;
@@ -13,17 +13,26 @@ public class SetUpOperationCanvas : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        totalValueText.text = "El valor total de las acciones es:" + totalValue + " COP";
+        SetUpMainCanvas.sharedInstance.UpdateLastPrice(0);
+        cashBalanceText.text = "Saldo en efectivo: " + 
+            SetUpMainCanvas.sharedInstance.GetCashBalance() + " COP";
+        unitValueText.text = "Valor unitario: " + 
+            SetUpMainCanvas.sharedInstance.GetLastPrice() + " COP";
+        sharesMarketText.text = "Tus acciones: " + SetUpMainCanvas.sharedInstance.GetSharesMarket();
+        totalValueText.text = 
+            "El valor total de las acciones es:" + string.Format("{0:c}", totalValue) + " COP";
     }
 
     // Update is called once per frame
     void Update()
     {
-        totalValue = int.Parse(inputField.text) * SetUpMainCanvas.sharedInstance.GetLastPrice();
+        //totalValue = int.Parse(inputField.text) * SetUpMainCanvas.sharedInstance.GetLastPrice();
 
         cashBalanceText.text = SetUpMainCanvas.sharedInstance.cashBalanceText.text;
         unitValueText.text = "Valor unitario: " + SetUpMainCanvas.sharedInstance.lastPriceText.text;
-        totalValueText.text = "El valor total de las acciones es:" + totalValue + " COP";
+        sharesMarketText.text = "Tus acciones: " + SetUpMainCanvas.sharedInstance.GetSharesMarket();
+        totalValueText.text = 
+            "El valor total de las acciones es:" + string.Format("{0:c}", totalValue) + " COP";
     }
 
     //actualizar el totalValue

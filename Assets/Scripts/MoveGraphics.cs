@@ -8,11 +8,6 @@ public class MoveGraphics : MonoBehaviour
 
     public Vector3 destination;
 
-    private void Start()
-    {
-        SetUpMainCanvas.sharedInstance.UpdateLastPrice(countPosition);
-    }
-
     //Deplazar el grafico a razon de la variable destination
     public void MoveGraphicPosition()
     {

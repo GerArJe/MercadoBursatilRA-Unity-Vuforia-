@@ -36,7 +36,7 @@ public class SetUpMainCanvas : MonoBehaviour
 
     private void Update()
     {
-        lastPriceText.text = lastPrice + " COP";
+        lastPriceText.text = "Ultimo precio: " + string.Format("{0:c}", lastPrice) + " COP";
         if (lastPrice >= previousLastPrice)
         {
             lastPriceText.color = Color.green;
@@ -46,9 +46,10 @@ public class SetUpMainCanvas : MonoBehaviour
             lastPriceText.color = Color.red;
         }
 
-        totalBalanceText.text = "Saldo Total: " + totalBalance + " COP";
+        totalBalanceText.text = "Saldo Total: " + string.Format("{0:c}", totalBalance) + " COP";
 
-        balanceDifferenceText.text = "Diferencia de Saldo: " + balanceDifference + " COP";
+        balanceDifferenceText.text = 
+            "Diferencia de Saldo: " + string.Format("{0:c}", balanceDifference) + " COP";
         if (balanceDifference >= 0)
         {  
             balanceDifferenceText.color = Color.green;
@@ -58,7 +59,7 @@ public class SetUpMainCanvas : MonoBehaviour
             balanceDifferenceText.color = Color.red;
         }
 
-        cashBalanceText.text = "Saldo en efectivo: " + cashBalance + " COP";
+        cashBalanceText.text = "Saldo en efectivo: " + string.Format("{0:c}", cashBalance) + " COP";
     }
 
     //actualizar el valor del Last Price
