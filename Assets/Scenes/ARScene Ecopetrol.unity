@@ -1001,8 +1001,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5024458226103390011, guid: acb9d3a6b1aabeb4c8340f74cdbdc205,
         type: 3}
+      propertyPath: m_Options.m_Options.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5024458226103390011, guid: acb9d3a6b1aabeb4c8340f74cdbdc205,
+        type: 3}
       propertyPath: m_Options.m_Options.Array.data[2].m_Text
-      value: BANCOLOMBIA (Semanal)
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5024458226103390011, guid: acb9d3a6b1aabeb4c8340f74cdbdc205,
         type: 3}

@@ -1618,6 +1618,21 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1210694843}
+    - target: {fileID: 5024458226103390011, guid: acb9d3a6b1aabeb4c8340f74cdbdc205,
+        type: 3}
+      propertyPath: m_Options.m_Options.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5024458226103390011, guid: acb9d3a6b1aabeb4c8340f74cdbdc205,
+        type: 3}
+      propertyPath: m_Options.m_Options.Array.data[2].m_Text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5024458226103390011, guid: acb9d3a6b1aabeb4c8340f74cdbdc205,
+        type: 3}
+      propertyPath: m_Options.m_Options.Array.data[1].m_Text
+      value: ECOPETROL (Diraria)
+      objectReference: {fileID: 0}
     - target: {fileID: 5024458224999713157, guid: acb9d3a6b1aabeb4c8340f74cdbdc205,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

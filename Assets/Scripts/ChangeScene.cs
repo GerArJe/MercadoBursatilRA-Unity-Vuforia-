@@ -41,29 +41,6 @@ public class ChangeScene : MonoBehaviour
                     currentCompany = Company.CementosArgos;
                     break;
                 case 1:
-                    SceneManager.LoadScene("ARScene Bancolombia");
-                    currentCompany = Company.Bancolombia;
-                    break;
-                case 2:
-                    SceneManager.LoadScene("ARScene Ecopetrol");
-                    currentCompany = Company.Ecopetrol;
-                    break;
-                default:
-                    break;
-            }
-        }else if (currentCompany.Equals(Company.Bancolombia))
-        {
-            switch (dropdown.value)
-            {
-                case 0:
-                    SceneManager.LoadScene("ARScene Bancolombia");
-                    currentCompany = Company.Bancolombia;
-                    break;
-                case 1:
-                    SceneManager.LoadScene("ARScene Cementos Argos");
-                    currentCompany = Company.CementosArgos;
-                    break;
-                case 2:
                     SceneManager.LoadScene("ARScene Ecopetrol");
                     currentCompany = Company.Ecopetrol;
                     break;
@@ -81,10 +58,6 @@ public class ChangeScene : MonoBehaviour
                 case 1:
                     SceneManager.LoadScene("ARScene Cementos Argos");
                     currentCompany = Company.CementosArgos;
-                    break;
-                case 2:
-                    SceneManager.LoadScene("ARScene Bancolombia");
-                    currentCompany = Company.Bancolombia;
                     break;
                 default:
                     break;
