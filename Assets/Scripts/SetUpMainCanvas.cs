@@ -17,7 +17,7 @@ public class SetUpMainCanvas : MonoBehaviour
     private int balanceDifference = 0;
     private int lastPrice;
     private int previousLastPrice;
-    private int cashBalance = 200000000;
+    private int cashBalance;
     private int sharesMarket = 0;
 
     private void Awake()
@@ -31,12 +31,15 @@ public class SetUpMainCanvas : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        cashBalance = 200000000;
         UpdateTotalBalance();
+        cashBalanceText.text = "Saldo en efectivo: $" + string.Format("{0:#,#}", cashBalance) + " COP";
     }
 
     private void Update()
     {
-        lastPriceText.text = "Ultimo precio: " + string.Format("{0:c}", lastPrice) + " COP";
+        lastPriceText.text = "Ultimo precio: $" + string.Format("{0:#,#}", lastPrice) + " COP";
         if (lastPrice >= previousLastPrice)
         {
             lastPriceText.color = Color.green;
@@ -46,10 +49,10 @@ public class SetUpMainCanvas : MonoBehaviour
             lastPriceText.color = Color.red;
         }
 
-        totalBalanceText.text = "Saldo Total: " + string.Format("{0:c}", totalBalance) + " COP";
+        totalBalanceText.text = "Saldo Total: $" + string.Format("{0:#,#}", totalBalance) + " COP";
 
         balanceDifferenceText.text = 
-            "Diferencia de Saldo: " + string.Format("{0:c}", balanceDifference) + " COP";
+            "Diferencia de Saldo: $" + string.Format("{0:#,#}", balanceDifference) + " COP";
         if (balanceDifference >= 0)
         {  
             balanceDifferenceText.color = Color.green;
@@ -59,7 +62,7 @@ public class SetUpMainCanvas : MonoBehaviour
             balanceDifferenceText.color = Color.red;
         }
 
-        cashBalanceText.text = "Saldo en efectivo: " + string.Format("{0:c}", cashBalance) + " COP";
+        //cashBalanceText.text = "Saldo en efectivo: " + string.Format("{0:c}", this.cashBalance) + " COP";
     }
 
     //actualizar el valor del Last Price
@@ -109,10 +112,12 @@ public class SetUpMainCanvas : MonoBehaviour
         if (operation)
         {
             this.cashBalance = this.cashBalance + cash;
+            cashBalanceText.text = "Saldo en efectivo: $" + GetCashBalance() + " COP";
         }
         else
         {
             this.cashBalance = this.cashBalance - cash;
+            cashBalanceText.text = "Saldo en efectivo: $" + GetCashBalance() + " COP";
         }
         
     }

@@ -20,7 +20,7 @@ public class SetUpOperationCanvas : MonoBehaviour
             SetUpMainCanvas.sharedInstance.GetLastPrice() + " COP";
         sharesMarketText.text = "Tus acciones: " + SetUpMainCanvas.sharedInstance.GetSharesMarket();
         totalValueText.text = 
-            "El valor total de las acciones es:" + string.Format("{0:c}", totalValue) + " COP";
+            "El valor total de las acciones es: $" + string.Format("{0:#,#}", totalValue) + " COP";
     }
 
     // Update is called once per frame
@@ -32,7 +32,7 @@ public class SetUpOperationCanvas : MonoBehaviour
         unitValueText.text = "Valor unitario: " + SetUpMainCanvas.sharedInstance.lastPriceText.text;
         sharesMarketText.text = "Tus acciones: " + SetUpMainCanvas.sharedInstance.GetSharesMarket();
         totalValueText.text = 
-            "El valor total de las acciones es:" + string.Format("{0:c}", totalValue) + " COP";
+            "El valor total de las acciones es: $" + string.Format("{0:#,#}", totalValue) + " COP";
     }
 
     //actualizar el totalValue
@@ -54,6 +54,8 @@ public class SetUpOperationCanvas : MonoBehaviour
             
             MenuManager.sharedInstance.HideOperationCanvas();
             MenuManager.sharedInstance.ShowMainCanvas();
+            inputField.Select();
+            inputField.text = "";
         }
         else
         {
@@ -74,6 +76,8 @@ public class SetUpOperationCanvas : MonoBehaviour
 
             MenuManager.sharedInstance.HideOperationCanvas();
             MenuManager.sharedInstance.ShowMainCanvas();
+            inputField.Select();
+            inputField.text = "";
         }
         else
         {
